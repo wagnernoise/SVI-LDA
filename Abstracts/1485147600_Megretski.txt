@@ -1,0 +1,15 @@
+Filename: 1485147600_Megretski.txt
+Author: Megretski, Alexandre
+Citation Date: 2017/01/23
+Abstract URL: https://arxiv.org//abs/1701.06652
+Title: Convex Parameterizations and Fidelity Bounds for Nonlinear  Identification and Reduced-Order Modelling
+Abstract: Model instability and poor prediction of long-term behavior are common
+problems when modeling dynamical systems using nonlinear "black-box"
+techniques. Direct optimization of the long-term predictions, often called
+simulation error minimization, leads to optimization problems that are
+generally non-convex in the model parameters and suffer from multiple local
+minima. In this work we present methods which address these problems through
+convex optimization, based on Lagrangian relaxation, dissipation inequalities,
+contraction theory, and semidefinite programming. We demonstrate the proposed
+methods with a model order reduction task for electronic circuit design and the
+identification of a pneumatic actuator from experiment.

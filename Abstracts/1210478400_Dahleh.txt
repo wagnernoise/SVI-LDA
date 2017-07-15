@@ -1,0 +1,11 @@
+Filename: 1210478400_Dahleh.txt
+Author: Dahleh, Munther
+Citation Date: 2008/05/11
+Abstract URL: https://arxiv.org//abs/0805.1563
+Title: A Linear Programming Relaxation and a Heuristic for the Restless Bandit  Problem with General Switching Costs
+Abstract: We extend a relaxation technique due to Bertsimas and Nino-Mora for the
+restless bandit problem to the case where arbitrary costs penalize switching
+between the bandits. We also construct a one-step lookahead policy using the
+solution of the relaxation. Computational experiments and a bound for
+approximate dynamic programming provide some empirical support for the
+heuristic.

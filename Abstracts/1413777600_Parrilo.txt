@@ -1,0 +1,16 @@
+Filename: 1413777600_Parrilo.txt
+Author: Parrilo, Pablo
+Citation Date: 2014/10/20
+Abstract URL: https://arxiv.org//abs/1410.5284
+Title: A globally convergent incremental Newton method
+Abstract: Motivated by machine learning problems over large data sets and distributed
+optimization over networks, we develop and analyze a new method called
+incremental Newton method for minimizing the sum of a large number of strongly
+convex functions. We show that our method is globally convergent for a variable
+stepsize rule. We further show that under a gradient growth condition,
+convergence rate is linear for both variable and constant stepsize rules. By
+means of an example, we show that without the gradient growth condition,
+incremental Newton method cannot achieve linear convergence. Our analysis can
+be extended to study other incremental methods: in particular, we obtain a
+linear convergence rate result for the incremental Gauss-Newton algorithm under
+a variable stepsize rule.

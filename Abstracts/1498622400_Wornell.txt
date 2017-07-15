@@ -1,0 +1,16 @@
+Filename: 1498622400_Wornell.txt
+Author: Wornell, Gregory
+Citation Date: 2017/06/28
+Abstract URL: https://arxiv.org//abs/1706.09387
+Title: Sparse OFDM: A Compressive Sensing Approach to Asynchronous Neighbor  Discovery
+Abstract: A novel low-complexity wireless neighbor discovery scheme, referred to as
+sparse orthogonal frequency division multiplexing (sparse-OFDM) is proposed.
+One area of application is the "Internet of Things" (IoT). The number of
+devices is very large while every device accesses the network with a small
+probability, so the number of active devices in a frame is much smaller than
+the total local device population. Sparse OFDM is a one-shot transmission
+scheme with low complexity, which exploits both the parallel channel access
+offered by OFDM and the bursty nature of transmissions. When the transmission
+delay of each device is an integer number of symbol intervals, analysis and
+simulation show that sparse OFDM enables successful asynchronous neighbor
+discovery using a much smaller code length than random access schemes.

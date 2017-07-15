@@ -1,0 +1,12 @@
+Filename: 1459396800_White.txt
+Author: White, Jacob
+Citation Date: 2016/03/31
+Abstract URL: https://arxiv.org//abs/1604.00076
+Title: Quasisymmetric Functions from Combinatorial Hopf Monoids and Ehrhart  Theory
+Abstract: We investigate quasisymmetric functions coming from combinatorial Hopf
+monoids. We show that these invariants arise naturally in Ehrhart theory, and
+that some of their specializations are Hilbert functions for relative
+simplicial complexes. This class of complexes, called forbidden composition
+complexes, also forms a Hopf monoid, thus demonstrating a link between Hopf
+algebras, Ehrhart theory, and commutative algebra. We also study various
+specializations of quasisymmetric functions.

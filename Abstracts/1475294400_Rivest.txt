@@ -1,0 +1,10 @@
+Filename: 1475294400_Rivest.txt
+Author: Rivest, Ronald
+Citation Date: 2016/10/01
+Abstract URL: https://arxiv.org//abs/1610.00127
+Title: Auditing Australian Senate Ballots
+Abstract: We explain why the Australian Electoral Commission should perform an audit of
+the paper Senate ballots against the published preference data files. We
+suggest four different post-election audit methods appropriate for Australian
+Senate elections. We have developed prototype code for all of them and tested
+it on preference data from the 2016 election.

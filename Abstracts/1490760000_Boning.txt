@@ -1,0 +1,12 @@
+Filename: 1490760000_Boning.txt
+Author: Boning, Duane
+Citation Date: 2017/03/29
+Abstract URL: https://arxiv.org//abs/1703.09876
+Title: Efficient Spatial Variation Characterization via Matrix Completion
+Abstract: In this paper, we propose a novel method to estimate and characterize spatial
+variations on dies or wafers. This new technique exploits recent developments
+in matrix completion, enabling estimation of spatial variation across wafers or
+dies with a small number of randomly picked sampling points while still
+achieving fairly high accuracy. This new approach can be easily generalized,
+including for estimation of mixed spatial and structure or device type
+information.

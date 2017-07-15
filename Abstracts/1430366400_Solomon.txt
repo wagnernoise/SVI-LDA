@@ -1,0 +1,7 @@
+Filename: 1430366400_Solomon.txt
+Author: Solomon, Justin
+Citation Date: 2015/04/30
+Abstract URL: https://arxiv.org//abs/1505.00185
+Title: PDE Approaches to Graph Analysis
+Abstract: This paper surveys and discusses recent work adapting partial differential
+equation (PDE) models to discrete structures.

@@ -1,0 +1,10 @@
+Filename: 1361077200_Kong.txt
+Author: Kong, Jing
+Citation Date: 2013/02/17
+Abstract URL: https://arxiv.org//abs/1302.4027
+Title: Large-scale 2D Electronics based on Single-layer MoS2 Grown by Chemical  Vapor Deposition
+Abstract: 2D nanoelectronics based on single-layer MoS2 offers great advantages for
+both conventional and ubiquitous applications. This paper discusses the
+large-scale CVD growth of single-layer MoS2 and fabrication of devices and
+circuits for the first time. Both digital and analog circuits are fabricated to
+demonstrate its capability for mixed-signal applications.

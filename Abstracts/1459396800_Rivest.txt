@@ -1,0 +1,8 @@
+Filename: 1459396800_Rivest.txt
+Author: Rivest, Ronald
+Citation Date: 2016/03/31
+Abstract URL: https://arxiv.org//abs/1603.09526
+Title: An IBE-based Signcryption Scheme for Group Key Management
+Abstract: This paper presents a new crypto scheme whose title promises it to be so
+boring that no-one will bother reading past the abstract. Because of this, the
+remainder of the paper is left blank.

@@ -1,0 +1,8 @@
+Filename: 1395720000_Micali.txt
+Author: Micali, Silvio
+Citation Date: 2014/03/25
+Abstract URL: https://arxiv.org//abs/1403.6394
+Title: Bridging Utility Maximization and Regret Minimization
+Abstract: We relate the strategy sets that a player ends up with after refining his own
+strategies according to two very different models of rationality: namely,
+utility maximization and regret minimization.

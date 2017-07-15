@@ -1,0 +1,21 @@
+Filename: 1497067200_Matusik.txt
+Author: Matusik, Wojciech
+Citation Date: 2017/06/10
+Abstract URL: https://arxiv.org//abs/1706.03189
+Title: Two-Scale Topology Optimization with Microstructures
+Abstract: In this paper we present a novel two-scale framework to optimize the
+structure and the material distribution of an object given its functional
+specifications. Our approach utilizes multi-material microstructures as
+low-level building blocks of the object. We start by precomputing the material
+property gamut -- the set of bulk material properties that can be achieved with
+all material microstructures of a given size. We represent the boundary of this
+material property gamut using a level set field. Next, we propose an efficient
+and general topology optimization algorithm that simultaneously computes an
+optimal object topology and spatially-varying material properties constrained
+by the precomputed gamut. Finally, we map the optimal spatially-varying
+material properties onto the microstructures with the corresponding properties
+in order to generate a high-resolution printable structure. We demonstrate the
+efficacy of our framework by designing, optimizing, and fabricating objects in
+different material property spaces on the level of a trillion voxels, i.e
+several orders of magnitude higher than what can be achieved with current
+systems.

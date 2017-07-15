@@ -1,0 +1,13 @@
+Filename: 1247716800_Tsitsiklis.txt
+Author: Tsitsiklis, John
+Citation Date: 2009/07/16
+Abstract URL: https://arxiv.org//abs/0907.2949
+Title: Distributed anonymous function computation in information fusion and  multiagent systems
+Abstract: We propose a model for deterministic distributed function computation by a
+network of identical and anonymous nodes, with bounded computation and storage
+capabilities that do not scale with the network size. Our goal is to
+characterize the class of functions that can be computed within this model. In
+our main result, we exhibit a class of non-computable functions, and prove that
+every function outside this class can at least be approximated. The problem of
+computing averages in a distributed manner plays a central role in our
+development.

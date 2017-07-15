@@ -1,0 +1,9 @@
+Filename: 1320379200_Williams.txt
+Author: Williams, Ryan
+Citation Date: 2011/11/04
+Abstract URL: https://arxiv.org//abs/1111.1261
+Title: A Casual Tour Around a Circuit Complexity Bound
+Abstract: I will discuss the recent proof that the complexity class NEXP
+(nondeterministic exponential time) lacks nonuniform ACC circuits of polynomial
+size. The proof will be described from the perspective of someone trying to
+discover it.

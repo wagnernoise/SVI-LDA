@@ -1,0 +1,10 @@
+Filename: 1458705600_Sanchez.txt
+Author: Sanchez, Daniel
+Citation Date: 2016/03/23
+Abstract URL: https://arxiv.org//abs/1603.07318
+Title: Discovery of Lorentz-violating Weyl fermion semimetal state in LaAlGe  materials
+Abstract: We report theoretical and experimental discovery of Lorentz-violating Weyl
+fermion semimetal type-II state in the LaAlGe class of materials. Previously
+type-II Weyl state was predicted in WTe2 materials which remains unrealized in
+surface experiments. We show theoretically and experimentally that LaAlGe class
+of materials are the robust platforms for the study of type-II Weyl physics.

@@ -1,0 +1,10 @@
+Filename: 1406952000_Leiserson.txt
+Author: Leiserson, Charles
+Citation Date: 2014/08/02
+Abstract URL: https://arxiv.org//abs/1408.0393
+Title: Standards for Graph Algorithm Primitives
+Abstract: It is our view that the state of the art in constructing a large collection
+of graph algorithms in terms of linear algebraic operations is mature enough to
+support the emergence of a standard set of primitive building blocks. This
+paper is a position paper defining the problem and announcing our intention to
+launch an open effort to define this standard.

@@ -1,0 +1,7 @@
+Filename: 1230613200_Madry.txt
+Author: Madry, Aleksander
+Citation Date: 2008/12/30
+Abstract URL: https://arxiv.org//abs/0812.5101
+Title: A 7/9 - Approximation Algorithm for the Maximum Traveling Salesman  Problem
+Abstract: We give a 7/9 - Approximation Algorithm for the Maximum Traveling Salesman
+Problem.

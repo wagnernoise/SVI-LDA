@@ -1,0 +1,8 @@
+Filename: 1352091600_Willsky.txt
+Author: Willsky, Alan
+Citation Date: 2012/11/05
+Abstract URL: https://arxiv.org//abs/1211.0835
+Title: Rejoinder: Latent variable graphical model selection via convex  optimization
+Abstract: Rejoinder to "Latent variable graphical model selection via convex
+optimization" by Venkat Chandrasekaran, Pablo A. Parrilo and Alan S. Willsky
+[arXiv:1008.1290].

@@ -1,0 +1,17 @@
+Filename: 1436414400_Freeman.txt
+Author: Freeman, William
+Citation Date: 2015/07/09
+Abstract URL: https://arxiv.org//abs/1507.02379
+Title: Understanding Intra-Class Knowledge Inside CNN
+Abstract: Convolutional Neural Network (CNN) has been successful in image recognition
+tasks, and recent works shed lights on how CNN separates different classes with
+the learned inter-class knowledge through visualization. In this work, we
+instead visualize the intra-class knowledge inside CNN to better understand how
+an object class is represented in the fully-connected layers.
+To invert the intra-class knowledge into more interpretable images, we
+propose a non-parametric patch prior upon previous CNN visualization models.
+With it, we show how different "styles" of templates for an object class are
+organized by CNN in terms of location and content, and represented in a
+hierarchical and ensemble way. Moreover, such intra-class knowledge can be used
+in many interesting applications, e.g. style-based image retrieval and
+style-based object completion.

@@ -1,0 +1,19 @@
+Filename: 1498536000_Ozdaglar.txt
+Author: Ozdaglar, Asuman
+Citation Date: 2017/06/27
+Abstract URL: https://arxiv.org//abs/1706.08693
+Title: Sensitivity analysis for network aggregative games
+Abstract: We investigate the sensitivity of the Nash equilibrium of constrained network
+aggregative games to changes in exogenous parameters affecting the cost
+function of the players. This setting is motivated by two applications. The
+first is the analysis of interventions by a social planner with a networked
+objective function while the second is network routing games with atomic
+players and information constraints. By exploiting a primal reformulation of a
+sensitivity analysis result for variational inequalities, we provide a
+characterization of the sensitivity of the Nash equilibrium that depends on
+primal variables only. To derive this result we assume strong monotonicity of
+the mapping associated with the game. As the second main result, we derive
+sufficient conditions that guarantee this strong monotonicity property in
+network aggregative games. These two characterizations allows us to
+systematically study changes in the Nash equilibrium due to perturbations or
+parameter variations in the two applications mentioned above.

@@ -1,0 +1,14 @@
+Filename: 1478840400_Dahleh.txt
+Author: Dahleh, Munther
+Citation Date: 2016/11/11
+Abstract URL: https://arxiv.org//abs/1611.03765
+Title: Emulating Batteries with Deferrable Energy Demand: Fundamental  Trade-offs and Scheduling Policies
+Abstract: We investigate the ability of a homogeneous collection of deferrable energy
+loads to behave as a battery; that is, to absorb and release energy in a
+controllable fashion up to fixed and predetermined limits on volume, charge
+rate and discharge rate. We derive explicit bounds on the battery capacity that
+can be offered, and show that there is a fundamental trade-off between the
+abilities of collective load to absorb and release energy at high aggregate
+rates. Finally, we introduce a new class of dynamic priority-driven feedback
+policies that balance these abilities, and characterize the batteries that they
+can emulate.

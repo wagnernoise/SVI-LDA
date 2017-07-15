@@ -1,0 +1,25 @@
+Filename: 1497412800_Sanchez.txt
+Author: Sanchez, Daniel
+Citation Date: 2017/06/14
+Abstract URL: https://arxiv.org//abs/1706.04600
+Title: Large Fermi Arcs in Unconventional Weyl Semimetal RhSi
+Abstract: Chiral fermions in three-dimensional condensed matter systems display
+dramatic examples of a topological bulk-boundary correspondence: the surface
+projections of the bulk chiral nodes, typically conventional $C=\pm 1$ Weyl
+fermions, appear connected by Fermi arcs. However, Weyl fermions have thus far
+only been experimentally realized in narrowly separated pairs, for which the
+Fermi arcs effects are weak. Recent works have introduced unconventional chiral
+Fermions, including single threefold-degenerate and double sixfold-degenerate
+spin-1 Weyl nodes. We report that in space group (SG) 198 $P2_{1}3$, the
+absence of rotoinversions permits at Brillouin zone corner $R$ a
+sixfold-degenerate double spin-1 Weyl point with nonzero Chern number.
+Furthermore, using a simple tight-binding model, we demonstrate that the
+minimal band connectivity of SG 198 displays this unconventional fermion, as
+well as a previously uncharacterized fourfold-degenerate chiral fermion at
+$\Gamma$. We perform first-principles electronic structure calculations
+demonstrating RhSi as representative of this physics. We find that in RhSi
+crystals, these two chiral fermions lie close to the Fermi energy and are
+connected by an otherwise large bulk gap. Each unconventional fermion displays
+Chern number $\pm4$ and their projections are connected by large surface Fermi
+arcs. We conclude with an analysis of the modified bulk photogalvanic effect in
+these unconventional Weyl semimetals.

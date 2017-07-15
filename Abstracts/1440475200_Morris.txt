@@ -1,0 +1,14 @@
+Filename: 1440475200_Morris.txt
+Author: Morris, Robert
+Citation Date: 2015/08/25
+Abstract URL: https://arxiv.org//abs/1508.06267
+Title: Nucleation and growth in two dimensions
+Abstract: We consider a dynamical process on a graph $G$, in which vertices are
+infected (randomly) at a rate which depends on the number of their neighbours
+that are already infected. This model includes bootstrap percolation and
+first-passage percolation as its extreme points. We give a precise description
+of the evolution of this process on the graph $\mathbb{Z}^2$, significantly
+sharpening results of Dehghanpour and Schonmann. In particular, we determine
+the typical infection time up to a constant factor for almost all natural
+values of the parameters, and in a large range we obtain a stronger, sharp
+threshold.

@@ -1,0 +1,17 @@
+Filename: 1346817600_Liu.txt
+Author: Liu, Luqiao
+Citation Date: 2012/09/05
+Abstract URL: https://arxiv.org//abs/1209.0962
+Title: Gate voltage modulation of spin-Hall-torque-driven magnetic switching
+Abstract: Two promising strategies for achieving efficient control of magnetization in
+future magnetic memory and non-volatile spin logic devices are spin transfer
+torque from spin polarized currents and voltage-controlled magnetic anisotropy
+(VCMA). Spin transfer torque is in widespread development as the write
+mechanism for next-generation magnetic memory, while VCMA offers the potential
+of even better energy performance due to smaller Ohmic losses. Here we
+introduce a 3-terminal magnetic tunnel junction (MTJ) device that combines both
+of these mechanisms to achieve new functionality: gate-voltage-modulated spin
+torque switching. This gating makes possible both more energy-efficient
+switching and also improved architectures for memory and logic applications,
+including a simple approach for making magnetic memories with a maximum-density
+cross-point geometry that does not require a control transistor for every MTJ.

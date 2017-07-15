@@ -1,0 +1,11 @@
+Filename: 1161662400_Mitter.txt
+Author: Mitter, Sanjoy
+Citation Date: 2006/10/24
+Abstract URL: https://arxiv.org//abs/cs/0610142
+Title: Coding into a source: a direct inverse Rate-Distortion theorem
+Abstract: Shannon proved that if we can transmit bits reliably at rates larger than the
+rate distortion function $R(D)$, then we can transmit this source to within a
+distortion $D$. We answer the converse question ``If we can transmit a source
+to within a distortion $D$, can we transmit bits reliably at rates less than
+the rate distortion function?'' in the affirmative. This can be viewed as a
+direct converse of the rate distortion theorem.

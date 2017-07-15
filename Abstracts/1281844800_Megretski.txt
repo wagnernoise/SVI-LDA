@@ -1,0 +1,7 @@
+Filename: 1281844800_Megretski.txt
+Author: Megretski, Alexandre
+Citation Date: 2010/08/15
+Abstract URL: https://arxiv.org//abs/1008.2552
+Title: KYP Lemma for Non-Strict Inequalities and the associated Minimax Theorem
+Abstract: Several variations of the classical Kalman-Yakubovich-Popov Lemma, as well
+the associated minimax theorem are presented.

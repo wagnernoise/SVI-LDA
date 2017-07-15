@@ -1,0 +1,14 @@
+Filename: 1499054400_Madden.txt
+Author: Madden, Samuel
+Citation Date: 2017/07/03
+Abstract URL: https://arxiv.org//abs/1707.00721
+Title: Version 0.1 of the BigDAWG Polystore System
+Abstract: A polystore system is a database management system (DBMS) composed of
+integrated heterogeneous database engines and multiple programming languages.
+By matching data to the storage engine best suited to its needs, complex
+analytics run faster and flexible storage choices helps improve data
+organization. BigDAWG (Big Data Working Group) is our reference implementation
+of a polystore system. In this paper, we describe the current BigDAWG software
+release which supports PostgreSQL, Accumulo and SciDB. We describe the overall
+architecture, API and initial results of applying BigDAWG to the MIMIC II
+medical dataset.

@@ -1,0 +1,17 @@
+Filename: 1238472000_Dahleh.txt
+Author: Dahleh, Munther
+Citation Date: 2009/03/31
+Abstract URL: https://arxiv.org//abs/0903.5535
+Title: Finite Approximations of Switched Homogeneous Systems for Controller  Synthesis
+Abstract: We demonstrate the use of a new, control-oriented notion of finite state
+approximation for a particular class of hybrid systems. Specifically, we
+consider the problem of designing a stabilizing binary output feedback
+switching controller for a pair of unstable homogeneous second order systems.
+The constructive approach presented in this note, in addition to yielding an
+explicit construction of a deterministic finite state approximate model of the
+hybrid plant, allows us to efficiently establish a useable upper bound on the
+quality of approximation, and leads to a discrete optimization problem whose
+solution immediately provides a certifiably correct-by-design controller for
+the original system. The resulting controller consists of a finite state
+observer for the plant and a corresponding full state feedback switching
+control law.

@@ -1,0 +1,11 @@
+Filename: 1374811200_Hu.txt
+Author: Hu, Qing
+Citation Date: 2013/07/26
+Abstract URL: https://arxiv.org//abs/1307.6905
+Title: Matrix elements of one-body and two-body operators between arbitrary HFB  multi-quasiparticle states
+Abstract: We present new formulae for the matrix elements of one-body and two-body
+physical operators in compact forms, which are applicable to arbitrary
+Hartree-Fock-Bogoliubov wave functions, including those for multi-quasiparticle
+excitations. The test calculations show that our formulae may substantially
+accelerate the process of symmetry restoration when applied to the heavy
+nuclear system.

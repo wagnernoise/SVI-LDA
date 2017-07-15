@@ -1,0 +1,10 @@
+Filename: 1369368000_Megretski.txt
+Author: Megretski, Alexandre
+Citation Date: 2013/05/24
+Abstract URL: https://arxiv.org//abs/1305.5856
+Title: H-Infinity Optimal Decentralized Matching Model Is Not Always Rational
+Abstract: We construct structured H-Infinity optimal model matching problems with
+rational coefficients, in which the optimal solution is not rational, in the
+sense that the cost does not achieve its maximal lower bound on the set of
+rational matching models, but the same maximal lower bound can be reached by
+using a continuous non-rational matching model.

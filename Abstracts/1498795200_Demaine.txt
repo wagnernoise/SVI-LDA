@@ -1,0 +1,15 @@
+Filename: 1498795200_Demaine.txt
+Author: Demaine, Erik
+Citation Date: 2017/06/30
+Abstract URL: https://arxiv.org//abs/1706.10046
+Title: Hamiltonicity is Hard in Thin or Polygonal Grid Graphs, but Easy in Thin  Polygonal Grid Graphs
+Abstract: In 2007, Arkin et al. initiated a systematic study of the complexity of the
+Hamiltonian cycle problem on square, triangular, or hexagonal grid graphs,
+restricted to polygonal, thin, superthin, degree-bounded, or solid grid graphs.
+They solved many combinations of these problems, proving them either
+polynomially solvable or NP-complete, but left three combinations open. In this
+paper, we prove two of these unsolved combinations to be NP-complete:
+Hamiltonicity of Square Polygonal Grid Graphs and Hamiltonicity of Hexagonal
+Thin Grid Graphs. We also consider a new restriction, where the grid graph is
+both thin and polygonal, and prove that Hamiltonicity then becomes polynomially
+solvable for square, triangular, and hexagonal grid graphs.

@@ -1,0 +1,9 @@
+Filename: 1251345600_Wornell.txt
+Author: Wornell, Gregory
+Citation Date: 2009/08/27
+Abstract URL: https://arxiv.org//abs/0908.4051
+Title: Training-Based Schemes are Suboptimal for High Rate Asynchronous  Communication
+Abstract: We consider asynchronous point-to-point communication. Building on a recently
+developed model, we show that training based schemes, i.e., communication
+strategies that separate synchronization from information transmission, perform
+suboptimally at high rate.

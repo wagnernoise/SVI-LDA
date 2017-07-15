@@ -1,0 +1,21 @@
+Filename: 1499572800_Polyanskiy.txt
+Author: Polyanskiy, Yury
+Citation Date: 2017/07/09
+Abstract URL: https://arxiv.org//abs/1707.02531
+Title: Optimal Sampling and Remote Estimation of the Wiener Process over a  Channel with Random Delay
+Abstract: In this paper, we consider a sampling and remote estimation problem, where
+samples of a Wiener process are forwarded to a remote estimator via a channel
+with queueing and random delay. The estimator reconstructs an estimate of the
+real-time signal value from causally received samples. We obtain the jointly
+optimal sampling and estimation strategy that minimizes the mean-square
+estimation error subject to a maximum sampling rate constraint. We prove that a
+threshold-based sampler and a minimum mean-square error (MMSE) estimator are
+jointly optimal, and the optimal threshold is found exactly. Our jointly
+optimal solution exhibits an interesting coupling between the source and
+channel, which is different from the source-channel separation in many previous
+information theoretical studies. If the sampling times are independent of the
+observed Wiener process, the joint sampling and estimation optimization problem
+reduces to an age-of-information optimization problem that has been recently
+solved. Our theoretical and numerical comparisons show that the estimation
+error of the optimal sampling policy can be much smaller than those of
+age-optimal sampling, zero-wait sampling, and classic periodic sampling.

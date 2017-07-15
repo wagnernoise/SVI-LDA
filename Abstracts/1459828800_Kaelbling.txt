@@ -1,0 +1,13 @@
+Filename: 1459828800_Kaelbling.txt
+Author: Kaelbling, Leslie
+Citation Date: 2016/04/05
+Abstract URL: https://arxiv.org//abs/1604.01348
+Title: Bayesian Optimization with Exponential Convergence
+Abstract: This paper presents a Bayesian optimization method with exponential
+convergence without the need of auxiliary optimization and without the
+delta-cover sampling. Most Bayesian optimization methods require auxiliary
+optimization: an additional non-convex global optimization problem, which can
+be time-consuming and hard to implement in practice. Also, the existing
+Bayesian optimization method with exponential convergence requires access to
+the delta-cover sampling, which was considered to be impractical. Our approach
+eliminates both requirements and achieves an exponential convergence rate.
