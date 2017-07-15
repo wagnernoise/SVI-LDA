@@ -1,0 +1,14 @@
+---
+title: "Latent Dirichlet allocation (LDA): MIT Case Study"
+author: "Randall Shane"
+date: "7/15/2017"
+output: html_document
+---
+
+Latent Dirichlet allocation (LDA) is an unsupervised learning topic model, similar to k-means clustering, and one of its applications is to discover common themes, or topics, that might occur across a collection of documents. The process followed here is based off a case study provided by MIT Professional Education Digital Programs, Data Science: Data to Insights, "Finding Themes In Project Descriptions." The study is presented by Professor Tamara Broderick. In this course, MIT provided numerous Case Studies, and this is one of the case studies I decided to implement since it is pertinent to my current discussions on automated integration.
+
+## Topic Models:
+
+Many text-mining algorithms are based on occurrence of words by frequency, and are associated with one and only one cluster. This can be misleading when a single word can occur multiple times in several articles, and each article can have one or multiple topics. So, unlike k-means clustering, it makes sense to allow each article (and word), to be associated with multiple topics. This is referred to as a mixed memberships model, and LDA is one of these models. By definition, feature allocation, mixed membership, and admixture are all terms that define the idea that data points can belong to multiple groups simultaneously.
+
+This algorithm has many scientific applications, but can be used as well in business and content management systems to capture concepts and topics that cross multiple lines of business. An algorithm such as LDA would be beneficial in marketing research, looking at multiple news articles from various news sources to see what topics pop up in the same articles or group of articles. New associations can be discovered that spark ideas for target markets, or product ideas.
