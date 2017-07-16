@@ -9,7 +9,7 @@ from collections import defaultdict, Counter
 import os
 import re
 
-def popDict(corpusDict, path, filename):
+def popDict(dataDict, path, filename):
     with open(path + '/' + filename, 'r') as f:
        for line in f.readlines():
             line = line.strip()
@@ -17,23 +17,22 @@ def popDict(corpusDict, path, filename):
                 filename = re.search('^Filename:\s(.*)\.', line).groups(1)[0]
             elif re.search('^Author:', line):
                 author = re.search('^Author:\s(.*)', line).groups(1)[0]
-                corpusDict[filename].append(author)
+                dataDict[filename].append(author)
             elif re.search('^Citation Date:', line):
                 citation_date = re.search('^Citation Date:\s(.*)', line).groups(1)[0]
-                corpusDict[filename].append(citation_date)
+                dataDict[filename].append(citation_date)
             elif re.search('^Abstract URL:', line):
                 abstract_url = re.search('^Abstract URL:\s(.*)', line).groups(1)[0]
-                corpusDict[filename].append(abstract_url)
+                dataDict[filename].append(abstract_url)
             elif re.search('^Title:', line):
                 title = re.search('^Title:\s(.*)', line).groups(1)[0]
-                corpusDict[filename].append(title)
+                dataDict[filename].append(title)
             elif re.search('^Abstract:', line):
                 abstract = re.search('^Abstract:\s(.*)', line).groups(1)[0]
             else:
                 abstract += line
-
-    corpusDict[filename].append(abstract)
-    return corpusDict
+    dataDict[filename].append(abstract)
+    return dataDict
 
 def nested_dict():
     return defaultdict(nested_dict)
@@ -141,14 +140,14 @@ def step1PreProcess(dataDict):
         # According to NLTK documentation:
         # "Observe that the Porter stemmer correctly handles the word lying
         # (mapping it to lie), while the Lancaster stemmer does not."
-
-        porter = nltk.PorterStemmer()
+        # See documentation. Stemming will not be performed on this data.
+        #porter = nltk.PorterStemmer()
         #lancaster = nltk.LancasterStemmer()
-        stemmedWords = [porter.stem(t) for t in stopped_tokens]
+        #stemmedWords = [porter.stem(t) for t in stopped_tokens]
         #print(stemmedWords)
-        dataDict[k].append(Counter(stemmedWords))
-        #print(dataDict[k][4])
-        print(dataDict[k][5])
+        dataDict[k].append(Counter(stopped_tokens))
+        #print(dataDict[k][5])
+    return dataDict
 
 
 if __name__ == '__main__':
