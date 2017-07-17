@@ -1,0 +1,18 @@
+Filename: 2017-06-29_Madry.txt
+Author: Madry, Aleksander
+Citation Date: 2017/06/29
+Abstract URL: https://arxiv.org//abs/1706.09884
+Title: Towards Understanding the Dynamics of Generative Adversarial Networks
+Abstract: Generative Adversarial Networks (GANs) have recently been proposed as a
+promising avenue towards learning generative models with deep neural networks.
+While GANs have demonstrated state-of-the-art performance on multiple vision
+tasks, their learning dynamics are not yet well understood, both in theory and
+in practice. To address this issue, we take a first step towards a rigorous
+study of GAN dynamics. We propose a simple model that exhibits several of the
+common problematic convergence behaviors (e.g., vanishing gradient, mode
+collapse, diverging or oscillatory behavior) and still allows us to establish
+the first convergence bounds for parametric GAN dynamics. We find an
+interesting dichotomy: a GAN with an optimal discriminator provably converges,
+while a first order approximation of the discriminator leads to unstable GAN
+dynamics and mode collapse. Our model and analysis point to a specific
+challenge in practical GAN training that we call discriminator collapse.

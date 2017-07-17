@@ -1,0 +1,20 @@
+Filename: 2016-11-22_Uhler.txt
+Author: Uhler, Caroline
+Citation Date: 2016/11/22
+Abstract URL: https://arxiv.org//abs/1611.07493
+Title: Counting Markov Equivalence Classes by Number of Immoralities
+Abstract: Two directed acyclic graphs (DAGs) are called Markov equivalent if and only
+if they have the same underlying undirected graph (i.e. skeleton) and the same
+set of immoralities. Using observational data, a DAG model can only be
+determined up to Markov equivalence, and so it is desirable to understand the
+size and number of Markov equivalence classes (MECs) combinatorially. In this
+paper, we address this enumerative question using a pair of generating
+functions that encode the number and size of MECs on a skeleton $G$, and in
+doing so we connect this problem to classical problems in combinatorial
+optimization. The first is a graph polynomial that counts the number of MECs on
+$G$ by their number of immoralities. Using connections to the independent set
+problem, we show that computing a DAG on $G$ with the maximum possible number
+of immoralities is NP-hard. The second generating function counts the MECs on
+$G$ according to their size. Via computer enumeration, we show that this
+generating function is distinct for every connected graph on $p$ nodes for all
+$p\leq 10$.

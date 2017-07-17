@@ -1,0 +1,14 @@
+Filename: 2009-06-22_Kong.txt
+Author: Kong, Jing
+Citation Date: 2009/06/22
+Abstract URL: https://arxiv.org//abs/0906.4037
+Title: Anisotropic Etching and Nanoribbon Formation in Single-Layer Graphene
+Abstract: We demonstrate anisotropic etching of single-layer graphene by
+thermally-activated nickel nanoparticles. Using this technique, we obtain
+sub-10nm nanoribbons and other graphene nanostructures with edges aligned along
+a single crystallographic direction. We observe a new catalytic channeling
+behavior, whereby etched cuts do not intersect, resulting in continuously
+connected geometries. Raman spectroscopy and electronic measurements show that
+the quality of the graphene is resilient under the etching conditions,
+indicating that this method may serve as a powerful technique to produce
+graphene nanocircuits with well-defined crystallographic edges.

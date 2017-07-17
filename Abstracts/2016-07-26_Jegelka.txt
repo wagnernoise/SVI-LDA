@@ -1,0 +1,14 @@
+Filename: 2016-07-26_Jegelka.txt
+Author: Jegelka, Stefanie
+Citation Date: 2016/07/26
+Abstract URL: https://arxiv.org//abs/1607.07762
+Title: Focused Model-Learning and Planning for Non-Gaussian Continuous  State-Action Systems
+Abstract: We introduce a framework for model learning and planning in stochastic
+domains with continuous state and action spaces and non-Gaussian transition
+models. It is efficient because (1) local models are estimated only when the
+planner requires them; (2) the planner focuses on the most relevant states to
+the current planning problem; and (3) the planner focuses on the most
+informative and/or high-value actions. Our theoretical analysis shows the
+validity and asymptotic optimality of the proposed approach. Empirically, we
+demonstrate the effectiveness of our algorithm on a simulated multi-modal
+pushing problem.

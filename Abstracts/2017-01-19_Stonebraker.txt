@@ -1,0 +1,14 @@
+Filename: 2017-01-19_Stonebraker.txt
+Author: Stonebraker, Michael
+Citation Date: 2017/01/19
+Abstract URL: https://arxiv.org//abs/1701.05799
+Title: BigDAWG Polystore Release and Demonstration
+Abstract: The Intel Science and Technology Center for Big Data is developing a
+reference implementation of a Polystore database. The BigDAWG (Big Data Working
+Group) system supports "many sizes" of database engines, multiple programming
+languages and complex analytics for a variety of workloads. Our recent efforts
+include application of BigDAWG to an ocean metagenomics problem and
+containerization of BigDAWG. We intend to release an open source BigDAWG v1.0
+in the Spring of 2017. In this article, we will demonstrate a number of
+polystore applications developed with oceanographic researchers at MIT and
+describe our forthcoming open source release of the BigDAWG system.

@@ -1,0 +1,15 @@
+Filename: 2016-05-12_Sontag.txt
+Author: Sontag, David
+Citation Date: 2016/05/12
+Abstract URL: https://arxiv.org//abs/1605.03661
+Title: Learning Representations for Counterfactual Inference
+Abstract: Observational studies are rising in importance due to the widespread
+accumulation of data in fields such as healthcare, education, employment and
+ecology. We consider the task of answering counterfactual questions such as,
+"Would this patient have lower blood sugar had she received a different
+medication?". We propose a new algorithmic framework for counterfactual
+inference which brings together ideas from domain adaptation and representation
+learning. In addition to a theoretical justification, we perform an empirical
+comparison with previous approaches to causal inference from observational
+data. Our deep learning algorithm significantly outperforms the previous
+state-of-the-art.

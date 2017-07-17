@@ -1,0 +1,17 @@
+Filename: 2010-02-24_Lo.txt
+Author: Lo, Andrew
+Citation Date: 2010/02/24
+Abstract URL: https://arxiv.org//abs/1002.4592
+Title: Is It Real, or Is It Randomized?: A Financial Turing Test
+Abstract: We construct a financial "Turing test" to determine whether human subjects
+can differentiate between actual vs. randomized financial returns. The
+experiment consists of an online video-game (this http URL) where
+players are challenged to distinguish actual financial market returns from
+random temporal permutations of those returns. We find overwhelming statistical
+evidence (p-values no greater than 0.5%) that subjects can consistently
+distinguish between the two types of time series, thereby refuting the
+widespread belief that financial markets "look random." A key feature of the
+experiment is that subjects are given immediate feedback regarding the validity
+of their choices, allowing them to learn and adapt. We suggest that such novel
+interfaces can harness human capabilities to process and extract information
+from financial data in ways that computers cannot.

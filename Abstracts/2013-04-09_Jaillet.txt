@@ -1,0 +1,9 @@
+Filename: 2013-04-09_Jaillet.txt
+Author: Jaillet, Patrick
+Citation Date: 2013/04/09
+Abstract URL: https://arxiv.org//abs/1304.2488
+Title: Log-Quadratic Bounds for the Gaussian Q-function
+Abstract: We present bounds of quadratic form for the logarithm of the Gaussian
+Q-function. We also show an analytical method for deriving log-quadratic
+approximations of the Q-function and give an approximation with absolute error
+less than $10^{-3}$.

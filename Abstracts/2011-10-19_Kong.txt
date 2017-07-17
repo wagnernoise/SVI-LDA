@@ -1,0 +1,12 @@
+Filename: 2011-10-19_Kong.txt
+Author: Kong, Jing
+Citation Date: 2011/10/19
+Abstract URL: https://arxiv.org//abs/1110.4356
+Title: Observation of Electronic Raman Scattering in Metallic Carbon Nanotubes
+Abstract: We present experimental measurements of the electronic contribution to the
+Raman spectra of individual metallic single-walled carbon nanotubes (MSWNTs).
+Photoexcited carriers are inelastically scattered by a continuum of low-energy
+electron-hole pairs created across the graphenelike linear electronic subbands
+of the MSWNTs. The optical resonances in MSWNTs give rise to well-defined
+electronic Raman peaks. This resonant electronic Raman scattering is a unique
+feature of the electronic structure of these one-dimensional quasimetals.

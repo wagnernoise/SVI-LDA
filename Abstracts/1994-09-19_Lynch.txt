@@ -1,0 +1,15 @@
+Filename: 1994-09-19_Lynch.txt
+Author: Lynch, Nancy
+Citation Date: 1994/09/19
+Abstract URL: https://arxiv.org//abs/math/9409220
+Title: Number of faults a system can withstand without repairs
+Abstract: We consider the following scheduling problem. A system is composed of $n$
+processors drawn from a pool of $N$. The processors can become faulty while in
+operation and faulty processors never recover. A report is issued whenever a
+fault occurs. This report states only the existence of a fault, but does not
+indicate its location. Based on this report, the scheduler can reconfigure the
+system and choose another set of $n$ processors. The system operates
+satisfactorily as long as at most $f$ of the $n$ selected processors are
+faulty. We exhibit a scheduling strategy allowing the system to operate
+satisfactorily until approximately $(N/n)f$ faults are reported in the worst
+case. Our precise bound is tight.

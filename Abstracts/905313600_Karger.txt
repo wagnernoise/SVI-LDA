@@ -1,7 +1,0 @@
-Filename: 905313600_Karger.txt
-Author: Karger, David
-Citation Date: 1998/09/09
-Abstract URL: https://arxiv.org//abs/cs/9809012
-Title: A Fully Polynomial Randomized Approximation Scheme for the All Terminal  Network Reliability Problem
-Abstract: The classic all-terminal network reliability problem posits a graph, each of
-whose edges fails independently with some given probability.

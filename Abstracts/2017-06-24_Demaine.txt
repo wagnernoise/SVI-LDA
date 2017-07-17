@@ -1,0 +1,21 @@
+Filename: 2017-06-24_Demaine.txt
+Author: Demaine, Erik
+Citation Date: 2017/06/24
+Abstract URL: https://arxiv.org//abs/1706.07900
+Title: Tree-Residue Vertex-Breaking: a new tool for proving hardness
+Abstract: In this paper, we introduce a new problem called Tree-Residue Vertex-Breaking
+(TRVB): given a multigraph $G$ some of whose vertices are marked "breakable,"
+is it possible to convert $G$ into a tree via a sequence of "vertex-breaking"
+operations (disconnecting the edges at a degree-$k$ breakable vertex by
+replacing that vertex with $k$ degree-$1$ vertices)? We consider the special
+cases of TRVB with any combination of the following additional constraints: $G$
+must be planar, $G$ must be a simple graph, the degree of every breakable
+vertex must belong to an allowed list $B$, and the degree of every unbreakable
+vertex must belong to an allowed list $U$. We fully characterize these variants
+of TRVB as polynomially solvable or NP-complete. The two results which we
+expect to be most generally applicable are that (1) TRVB is polynomially
+solvable when breakable vertices are restricted to have degree at most $3$; and
+(2) for any $k \ge 4$, TRVB is NP-complete when the given multigraph is
+restricted to be planar and to consist entirely of degree-$k$ breakable
+vertices. To demonstrate the use of TRVB, we give a simple proof of the known
+result that Hamiltonicity in max-degree-$3$ square grid graphs is NP-hard.

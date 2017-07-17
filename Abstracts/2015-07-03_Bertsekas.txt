@@ -1,0 +1,10 @@
+Filename: 2015-07-03_Bertsekas.txt
+Author: Bertsekas, Dimitri
+Citation Date: 2015/07/03
+Abstract URL: https://arxiv.org//abs/1507.01026
+Title: Value and Policy Iteration in Optimal Control and Adaptive Dynamic  Programming
+Abstract: In this paper, we consider discrete-time infinite horizon problems of optimal
+control to a terminal set of states. These are the problems that are often
+taken as the starting point for adaptive dynamic programming. Under very
+general assumptions, we establish the uniqueness of solution of Bellman's
+equation, and we provide convergence results for value and policy iteration.

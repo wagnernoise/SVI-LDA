@@ -1,0 +1,12 @@
+Filename: 2017-03-20_Miller.txt
+Author: Miller, Rob
+Citation Date: 2017/03/20
+Abstract URL: https://arxiv.org//abs/1703.06815
+Title: Foundations for a Probabilistic Event Calculus
+Abstract: We present PEC, an Event Calculus (EC) style action language for reasoning
+about probabilistic causal and narrative information. It has an action language
+style syntax similar to that of the EC variant Modular-E. Its semantics is
+given in terms of possible worlds which constitute possible evolutions of the
+domain, and builds on that of EFEC, an epistemic extension of EC. We also
+describe an ASP implementation of PEC and show the sense in which this is sound
+and complete.

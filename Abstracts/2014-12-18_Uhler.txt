@@ -1,0 +1,13 @@
+Filename: 2014-12-18_Uhler.txt
+Author: Uhler, Caroline
+Citation Date: 2014/12/18
+Abstract URL: https://arxiv.org//abs/1412.6185
+Title: Exponential Varieties
+Abstract: Exponential varieties arise from exponential families in statistics. These
+real algebraic varieties have strong positivity and convexity properties,
+familiar from toric varieties and their moment maps. Among them are varieties
+of inverses of symmetric matrices satisfying linear constraints. This class
+includes Gaussian graphical models. We develop a general theory of exponential
+varieties. These are derived from hyperbolic polynomials and their integral
+representations. We compare the multidegrees and ML degrees of the gradient map
+for hyperbolic polynomials.

@@ -1,0 +1,14 @@
+Filename: 2016-02-29_Madden.txt
+Author: Madden, Samuel
+Citation Date: 2016/02/29
+Abstract URL: https://arxiv.org//abs/1602.08791
+Title: The BigDAWG Architecture
+Abstract: BigDAWG is a polystore system designed to work on complex problems that
+naturally span across different processing or storage engines. BigDAWG provides
+an architecture that supports diverse database systems working with different
+data models, support for the competing notions of location transparency and
+semantic completeness via islands of information and a middleware that provides
+a uniform multi-island interface. In this article, we describe the current
+architecture of BigDAWG, its application on the MIMIC II medical dataset, and
+our plans for the mechanics of cross-system queries. During the presentation,
+we will also deliver a brief demonstration of the current version of BigDAWG.

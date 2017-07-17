@@ -1,9 +1,0 @@
-Filename: 1486530000_Shapiro.txt
-Author: Shapiro, Jeffrey
-Citation Date: 2017/02/08
-Abstract URL: https://arxiv.org//abs/1702.02424
-Title: Large-Alphabet Encoding Schemes for Floodlight Quantum Key Distribution
-Abstract: Floodlight quantum key distribution (FL-QKD) uses binary phase-shift keying
-(BPSK) of multiple optical modes to achieve Gbps secret-key rates (SKRs) at
-metropolitan-area distances. We show that FL-QKD's SKR can be doubled by using
-32-ary PSK.

@@ -1,0 +1,25 @@
+Filename: 2017-06-14_Williams.txt
+Author: Williams, Ryan
+Citation Date: 2017/06/14
+Abstract URL: https://arxiv.org//abs/1706.04580
+Title: Context-Aware System Synthesis, Task Assignment, and Routing
+Abstract: The design and organization of complex computational systems, such as those
+found in robots, traditionally requires laborious trial-and-error processes to
+ensure components are correctly connected with necessary resources for
+computation. This paper presents a novel generalization of the quadratic
+assignment and routing problem, introducing formalizations for selecting
+components and interconnections to synthesize a complete system capable of
+providing some user-defined functionality. By introducing problem context,
+functional requirements, and modularity directly into the assignment problem,
+optimal systems can be automatically generated while respecting constraints on
+bandwidth and computational resources. The ability to generate complete
+functional systems reduces manual design effort by allowing for a guided
+exploration of the design space, and increases resiliency by quantifying
+resource margins and enabling adaptation of system structure in response to
+changing environments, hardware or software failure. The proposed formulation
+is cast as an integer linear program which is provably $\mathcal{NP}$-hard.
+Several case studies explore the capabilities in designing several complex
+robot systems, highlighting the expressiveness and scale of problems
+addressable by this approach. Numerical simulations quantify real world
+performance and demonstrate tractable time complexity for the scale of problems
+encountered in many modern robotic systems.

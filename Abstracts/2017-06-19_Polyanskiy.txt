@@ -1,0 +1,27 @@
+Filename: 2017-06-19_Polyanskiy.txt
+Author: Polyanskiy, Yury
+Citation Date: 2017/06/19
+Abstract URL: https://arxiv.org//abs/1706.05972
+Title: Beta-Beta Bounds: Finite-Blocklength Analog of the Golden Formula
+Abstract: It is well known that the mutual information between two random variables can
+be expressed as the difference of two relative entropies that depend on an
+auxiliary distribution, a relation sometimes referred to as the golden formula.
+This paper is concerned with a finite-blocklength extension of this relation.
+This extension consists of two elements: (i) a finite-blocklength
+channel-coding converse bound by Polyanskiy and Verd\'u (2014), which involves
+the ratio between two Neyman-Pearson $\beta$ functions (beta-beta converse
+bound), and (ii) a novel beta-beta channel-coding achievability bound,
+expressed again as the ratio between two Neyman-Pearson $\beta$ functions.
+To demonstrate the usefulness of this finite-blocklength extension of the
+golden formula, the beta-beta achievability and converse bounds are used to
+obtain a finite-blocklength extension of Verd\'u's (2002) wideband-slope
+approximation. The proof parallels the elegant derivation in Verd\'u (2002),
+with the beta-beta bounds used in place of the golden formula.
+The beta-beta (achievability) bound is also shown to be useful in cases where
+the capacity-achieving output distribution is not a product distribution due
+to, e.g., a cost constraint or structural constraints on the codebook, such as
+orthogonality or constant composition. As an example, the bound is used to
+characterize the channel dispersion of the additive exponential-noise channel
+and to obtain a finite-blocklength achievability bound (the tightest to date)
+for multiple-input multiple-output Rayleigh-fading channels with perfect
+channel state information at the receiver.

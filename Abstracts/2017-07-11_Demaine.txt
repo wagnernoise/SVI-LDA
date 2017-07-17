@@ -1,0 +1,15 @@
+Filename: 2017-07-11_Demaine.txt
+Author: Demaine, Erik
+Citation Date: 2017/07/11
+Abstract URL: https://arxiv.org//abs/1707.03146
+Title: A simple proof that the $(n^2-1)$-puzzle is hard
+Abstract: The 15 puzzle is a classic reconfiguration puzzle with fifteen uniquely
+labeled unit squares within a $4 \times 4$ board in which the goal is to slide
+the squares (without ever overlapping) into a target configuration. By
+generalizing the puzzle to an $n \times n$ board with $n^2-1$ squares, we can
+study the computational complexity of problems related to the puzzle; in
+particular, we consider the problem of determining whether a given end
+configuration can be reached from a given start configuration via at most a
+given number of moves. This problem was shown NP-complete in Ratner and Warmuth
+(1990). We provide an alternative simpler proof of this fact by reduction from
+the rectilinear Steiner tree problem.

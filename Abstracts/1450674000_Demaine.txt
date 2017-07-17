@@ -1,8 +1,0 @@
-Filename: 1450674000_Demaine.txt
-Author: Demaine, Erik
-Citation Date: 2015/12/21
-Abstract URL: https://arxiv.org//abs/1512.06706
-Title: Dissection with the Fewest Pieces is Hard, Even to Approximate
-Abstract: We prove that it is NP-hard to dissect one simple orthogonal polygon into
-another using a given number of pieces, as is approximating the fewest pieces
-to within a factor of $1+1/1080-\varepsilon$.

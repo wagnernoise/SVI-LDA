@@ -1,7 +1,0 @@
-Filename: 1216353600_Williams.txt
-Author: Williams, Ryan
-Citation Date: 2008/07/18
-Abstract URL: https://arxiv.org//abs/0807.3026
-Title: Finding paths of length k in O*(2^k) time
-Abstract: We give a randomized algorithm that determines if a given graph has a simple
-path of length at least k in O(2^k poly(n,k)) time.

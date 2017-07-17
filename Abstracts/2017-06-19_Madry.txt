@@ -1,0 +1,19 @@
+Filename: 2017-06-19_Madry.txt
+Author: Madry, Aleksander
+Citation Date: 2017/06/19
+Abstract URL: https://arxiv.org//abs/1706.06083
+Title: Towards Deep Learning Models Resistant to Adversarial Attacks
+Abstract: Recent work has demonstrated that neural networks are vulnerable to
+adversarial examples, i.e., inputs that are almost indistinguishable from
+natural data and yet classified incorrectly by the network. In fact, some of
+the latest findings suggest that the existence of adversarial attacks may be an
+inherent weakness of deep learning models. To address this problem, we study
+the adversarial robustness of neural networks through the lens of robust
+optimization. This approach provides us with a broad and unifying view on much
+of the prior work on this topic. Its principled nature also enables us to
+identify methods for both training and attacking neural networks that are
+reliable and, in a certain sense, universal. In particular, they specify a
+concrete, general guarantee to provide. These methods let us train networks
+with significantly improved resistance to a wide range of adversarial attacks.
+This suggests that adversarially resistant deep learning models might be within
+our reach after all.

@@ -1,0 +1,26 @@
+Filename: 2017-07-02_Williams.txt
+Author: Williams, Virginia
+Citation Date: 2017/07/02
+Abstract URL: https://arxiv.org//abs/1707.00362
+Title: Dynamic Parameterized Problems and Algorithms
+Abstract: Fixed-parameter algorithms and kernelization are two powerful methods to
+solve $\mathsf{NP}$-hard problems. Yet, so far those algorithms have been
+largely restricted to static inputs.
+In this paper we provide fixed-parameter algorithms and kernelizations for
+fundamental $\mathsf{NP}$-hard problems with dynamic inputs. We consider a
+variety of parameterized graph and hitting set problems which are known to have
+$f(k)n^{1+o(1)}$ time algorithms on inputs of size $n$, and we consider the
+question of whether there is a data structure that supports small updates (such
+as edge/vertex/set/element insertions and deletions) with an update time of
+$g(k)n^{o(1)}$; such an update time would be essentially optimal. Update and
+query times independent of $n$ are particularly desirable. Among many other
+results, we show that Feedback Vertex Set and $k$-Path admit dynamic algorithms
+with $f(k)\log^{O(1)}n$ update and query times for some function $f$ depending
+on the solution size $k$ only.
+We complement our positive results by several conditional and unconditional
+lower bounds. For example, we show that unlike their undirected counterparts,
+Directed Feedback Vertex Set and Directed $k$-Path do not admit dynamic
+algorithms with $n^{o(1)}$ update and query times even for constant solution
+sizes $k\leq 3$, assuming popular hardness hypotheses. We also show that
+unconditionally, in the cell probe model, Directed Feedback Vertex Set cannot
+be solved with update time that is purely a function of $k$.

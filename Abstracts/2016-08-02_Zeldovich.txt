@@ -1,0 +1,7 @@
+Filename: 2016-08-02_Zeldovich.txt
+Author: Zeldovich, Nickolai
+Citation Date: 2016/08/02
+Abstract URL: https://arxiv.org//abs/1608.00678
+Title: Report on the NSF Workshop on Formal Methods for Security
+Abstract: Report on the NSF Workshop on Formal Methods for Security, held 19-20
+November 2015.

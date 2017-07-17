@@ -1,0 +1,12 @@
+Filename: 2016-06-23_Broderick.txt
+Author: Broderick, Tamara
+Citation Date: 2016/06/23
+Abstract URL: https://arxiv.org//abs/1606.07153
+Title: Fast robustness quantification with variational Bayes
+Abstract: Bayesian hierarchical models are increasing popular in economics. When using
+hierarchical models, it is useful not only to calculate posterior expectations,
+but also to measure the robustness of these expectations to reasonable
+alternative prior choices. We use variational Bayes and linear response methods
+to provide fast, accurate posterior means and robustness measures with an
+application to measuring the effectiveness of microcredit in the developing
+world.

@@ -1,0 +1,12 @@
+Filename: 2014-12-17_Rubinfeld.txt
+Author: Rubinfeld, Ronitt
+Citation Date: 2014/12/17
+Abstract URL: https://arxiv.org//abs/1412.5484
+Title: A Self-Tester for Linear Functions over the Integers with an Elementary  Proof of Correctness
+Abstract: We present simple, self-contained proofs of correctness for algorithms for
+linearity testing and program checking of linear functions on finite subsets of
+integers represented as n-bit numbers. In addition we explore a generalization
+of self-testing to homomorphisms on a multidimensional vector space. We show
+that our self-testing algorithm for the univariate case can be directly
+generalized to vector space domains. The number of queries made by our
+algorithms is independent of domain size.

@@ -1,0 +1,14 @@
+Filename: 2014-03-18_Parrilo.txt
+Author: Parrilo, Pablo
+Citation Date: 2014/03/18
+Abstract URL: https://arxiv.org//abs/1403.4330
+Title: Optimal Output Feedback Architecture for Triangular LQG Problems
+Abstract: Distributed control problems under some specific information constraints can
+be formulated as (possibly infinite dimensional) convex optimization problems.
+The underlying motivation of this work is to develop an understanding of the
+optimal decision making architecture for such problems. In this paper, we
+particularly focus on the N-player triangular LQG problems and show that the
+optimal output feedback controllers have attractive state space realizations.
+The optimal controller can be synthesized using a set of stabilizing solutions
+to 2N linearly coupled algebraic Riccati equations, which turn out to be easily
+solvable under reasonable assumptions.

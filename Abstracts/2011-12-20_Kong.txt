@@ -1,0 +1,17 @@
+Filename: 2011-12-20_Kong.txt
+Author: Kong, Jing
+Citation Date: 2011/12/20
+Abstract URL: https://arxiv.org//abs/1112.4831
+Title: Delay Analysis of Graphene Field-Effect Transistors
+Abstract: In this letter, we analyze the carrier transit delay in graphene field-effect
+transistors (GFETs). GFETs are fabricated at the wafer-scale on sapphire
+substrate. For a device with a gate length of 210 nm, a current gain cut-off
+frequency fT of 18 GHz and 22 GHz is obtained before and after de-embedding.
+The extraction of the internal (Cgs,i, Cgd,i) and external capacitances (Cgs,ex
+and Cgd,ex) from the scaling behavior of the gate capacitances Cgs and Cgd
+allows the intrinsic ({\tau}_int), extrinsic ({\tau}_ext) and parasitic delays
+({\tau}_par) to be obtained. In addition, the extraction of the intrinsic delay
+provides a new way to directly estimate carrier velocity from the experimental
+data while the breakdown of the total delay into intrinsic, extrinsic, and
+parasitic components can offer valuable information for optimizing RF GFETs
+structures.
