@@ -1,16 +1,17 @@
-from stop_words import get_stop_words
+#!/usr/bin/python
+
 import nltk
 from nltk import word_tokenize
 from bs4 import BeautifulSoup
 import urllib.request
-import time
-import string
 from collections import defaultdict, Counter
 import os
 import re
+from nltk.stem import RegexpStemmer
 
 def popDict(dataDict, path, filename):
     with open(path + '/' + filename, 'r') as f:
+       #print(filename)
        for line in f.readlines():
             line = line.strip()
             if re.search('^Filename:', line):
@@ -21,6 +22,8 @@ def popDict(dataDict, path, filename):
             elif re.search('^Citation Date:', line):
                 citation_date = re.search('^Citation Date:\s(.*)', line).groups(1)[0]
                 dataDict[filename].append(citation_date)
+                year = re.search('^Citation Date: (\d+)', line).groups(0)[0]
+                dataDict[filename].append(year)
             elif re.search('^Abstract URL:', line):
                 abstract_url = re.search('^Abstract URL:\s(.*)', line).groups(1)[0]
                 dataDict[filename].append(abstract_url)
@@ -49,22 +52,34 @@ def readURL(url):
     return html
 
 def faculty():
+
     html = readURL("https://www.eecs.mit.edu/people/faculty-advisors")
     soup = BeautifulSoup(html, 'html.parser')
-
-    names = list()
+    names = defaultdict(list)
     divs = soup.find_all(class_="field-content card-title")
     for div in divs:
-        names.append(div.get_text())
+        try:
+            dept = div.find('a')['href']
+            if dept.lower().find('csail') > 0 : dept = 'CSAIL'
+            elif dept.lower().find('lids') > 0 : dept = 'LIDS'
+            elif dept.lower().find('mtl') > 0 : dept = 'MTL'
+            elif dept.lower().find('rle') > 0 : dept = 'RLE'
+            else: dept = 'UNK'
+        except:
+            dept = 'UNK' # These records had no No HREF
+            pass
+        try:
+            names[div.get_text()] = dept
+        except:
+            continue
     return names
 
 def getArticles(fac_lst):
     #Search papers in arXiv for each person in
     # arxiv.org/find/all/1/au:+(lastname)_(initial)/0/1/0/all/0/1
-    abs_dict = nested_dict()
     fac_dict = nested_dict()
     count = 0
-    for i in range(146, len(fac_lst)):
+    for i in range(len(fac_lst)):
         try:
             fname, lname = fac_lst[i].split()
             fac_dict[i] = (lname, fname,)
@@ -102,11 +117,15 @@ def getArticles(fac_lst):
             soup = BeautifulSoup(html_text, "html.parser");
             abstract = soup.find("blockquote", class_="abstract").text
             citation_date = soup.find("meta", {"name":"citation_date"})['content']
+            print(type(citation_date))
             abstract = abstract.replace("Abstract: ", "")
             title = soup.find("h1", class_="title").text
-            pattern = '%Y/%m/%d'
-            epoch = int(time.mktime(time.strptime(citation_date, pattern)))
-            filename = str(str(epoch) + '_' + fac_dict[i][0] + '.txt')
+            #pattern = '%Y-%m-%d'
+            #epoch = int(time.mktime(time.strptime(citation_date, pattern)))
+            #filename = str(str(epoch) + '_' + fac_dict[i][0] + '.txt')
+            #filename = str(str(pattern) + '_' + fac_dict[i][0] + '.txt')
+            filename = str(citation_date.replace('/', '-') + '_' + fac_dict[i][0] + '.txt')
+            print('Filename:', filename)
             author = str(fac_dict[i][0] + ", " + fac_dict[i][1])
             abs_complete = str('Filename: ' + filename + '\n' + \
                 'Author: ' + author + \
@@ -126,27 +145,45 @@ def getArticles(fac_lst):
             except:
                 print("   FAILURE: could not store in %s !" % filename)
 
-def step1PreProcess(dataDict):
+def preProcess(dataDict):
     temp = list()
     for k in dataDict.keys():
-#        if 'Karger' in k:
-        temp = dataDict[k][4].lower()
-        temp1 = re.sub('['+string.punctuation+']', '', temp)
-        words = word_tokenize(temp1)
-        # create English stop words list
-        en_stop = get_stop_words('en')
-        stopped_tokens = [i for i in words if not i in en_stop]
-
+        stopset = set(nltk.corpus.stopwords.words('english'))
+        stopset.update(('end', 'and', 'of', 'to', ':', '', ))
+        words = word_tokenize(dataDict[k][5].strip().lower()) # Abstracts
+        words2 = word_tokenize(dataDict[k][4].strip().lower()) # Titles
+        stopped_tokens = [i for i in words if not i in stopset and len(i) > 2] # Abstracts
+        stopped_tokens2 = [i for i in words2 if not i in stopset and len(i) > 2] # Titles
+        stopped_combined = stopped_tokens + stopped_tokens2
+        # print (len(stopped_combined), stopped_combined)
         # According to NLTK documentation:
         # "Observe that the Porter stemmer correctly handles the word lying
         # (mapping it to lie), while the Lancaster stemmer does not."
-        # See documentation. Stemming will not be performed on this data.
-        #porter = nltk.PorterStemmer()
-        #lancaster = nltk.LancasterStemmer()
-        #stemmedWords = [porter.stem(t) for t in stopped_tokens]
+        porter = nltk.PorterStemmer()
+        stemmedWords = [porter.stem(t) for t in stopped_tokens]
+        stemmedWords2 = [porter.stem(t) for t in stopped_tokens2]
+        stemmedWords3 = [porter.stem(t) for t in stopped_combined]
+
+        # st = RegexpStemmer('ing$|s$', min=2)
+        # stemmedWords = [st.stem(t) for t in stopped_tokens]
+        # stemmedWords2 = [st.stem(t) for t in stopped_tokens2]
+
         #print(stemmedWords)
-        dataDict[k].append(Counter(stopped_tokens))
-        #print(dataDict[k][5])
+        #dataDict[k].append(Counter(stemmedWords))
+        #dataDict[k].append(stopped_tokens) # preProcessed Abstracts
+        #dataDict[k].append(stopped_tokens2) # preProcessed Titles
+        # print('stemmedWords', stemmedWords)
+        # print('stemmedWords2', stemmedWords2)
+        dataDict[k].append(stemmedWords)  # preProcessed Abstracts
+        dataDict[k].append(stemmedWords2)  # preProcessed Titles
+        dataDict[k].append(Counter(stemmedWords3))  # preProcessed Titles
+
+        #dataDict[k].append(Counter(stopped_tokens2)) # Unique list of Title Words
+
+    #print(dataDict[k][6])
+    #print(dataDict[k][7])
+    # print(dataDict[k][8])
+
     return dataDict
 
 

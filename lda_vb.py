@@ -1,5 +1,6 @@
+#!/usr/bin/python
 
-import sys, re, time, string
+import re
 import numpy as n
 from scipy.special import gammaln, psi
 
@@ -12,7 +13,7 @@ def dirichlet_expectation(alpha):
     For a vector theta ~ Dir(alpha), computes E[log(theta)] given alpha.
     """
     if (len(alpha.shape) == 1):
-        print(type(alpha), alpha)
+        #print(type(alpha), alpha)
         return (psi(alpha) - psi(n.sum(alpha)))
     return (psi(alpha) - psi(n.sum(alpha, 1))[:, n.newaxis])
 
@@ -62,8 +63,17 @@ def parse_doc_list(docs, vocab):
                 if (not wordtoken in ddict):
                     ddict[wordtoken] = 0
                 ddict[wordtoken] += 1
-        wordids.append(ddict.keys())
-        wordcts.append(ddict.values())
+        # Randall Shane: as a troubleshooting test
+        # I added the list conversion because the
+        # expElogbetad = self._expElogbeta[:, ids] command was expecting
+        # a list of integers and was getting a dict_keys object
+
+        # Appeared to have fixed the problem -- may be just a
+        # I am running v3.6.1, so could be a version issue,
+        # or, more than likely, I was not passing the data in the correct
+        # format to begin with. Dunno!
+        wordids.append(list(ddict.keys()))
+        wordcts.append(list(ddict.values()))
 
     return ((wordids, wordcts))
 
@@ -97,6 +107,7 @@ class LDAVB:
             word = word.lower()
             word = re.sub(r'[^a-z]', '', word)
             self._vocab[word] = len(self._vocab)
+        print('lda._vocab', len(self._vocab), self._vocab)
 
         self._K = K
         self._W = len(self._vocab)
@@ -126,25 +137,13 @@ class LDAVB:
         it = 0
         meanchange = 0
         for d in range(0, batchD):
-            print
-            sum(wordcts[d])
             # These are mostly just shorthand (but might help cache locality)
             ids = wordids[d]
-
-            print('These are ids:', ids)
-
             cts = wordcts[d]
-            print('These are cts:', cts)
             gammad = gamma[d, :]
-            print('These are gammad:', gammad)
             Elogthetad = Elogtheta[d, :]
-            print('These are Elogthetad:', Elogthetad)
             expElogthetad = expElogtheta[d, :]
-            print('These are expElogthetad:', expElogthetad)
-            print('This is self._expElogbeta:', self._expElogbeta)
-
             expElogbetad = self._expElogbeta[:, ids]
-
             # The optimal phi_{dwk} is proportional to
             # expElogthetad_k * expElogbetad_w. phinorm is the normalizer.
             phinorm = n.dot(expElogthetad, expElogbetad) + 1e-100
@@ -200,61 +199,8 @@ class LDAVB:
             docs = temp
 
         (wordids, wordcts) = parse_doc_list(docs, self._vocab)
-        print(wordids)
-        print(wordcts)
-
         return self.do_e_step(wordids, wordcts)
 
-    #         batchD = len(docs)
-
-    #         # Initialize the variational distribution q(theta|gamma) for
-    #         # the mini-batch
-    #         gamma = 1*n.random.gamma(100., 1./100., (batchD, self._K))
-    #         Elogtheta = dirichlet_expectation(gamma)
-    #         expElogtheta = n.exp(Elogtheta)
-
-    #         sstats = n.zeros(self._lambda.shape)
-    #         # Now, for each document d update that document's gamma and phi
-    #         it = 0
-    #         meanchange = 0
-    #         for d in range(0, batchD):
-    #             # These are mostly just shorthand (but might help cache locality)
-    #             ids = wordids[d]
-    #             cts = wordcts[d]
-    #             gammad = gamma[d, :]
-    #             Elogthetad = Elogtheta[d, :]
-    #             expElogthetad = expElogtheta[d, :]
-    #             expElogbetad = self._expElogbeta[:, ids]
-    #             # The optimal phi_{dwk} is proportional to
-    #             # expElogthetad_k * expElogbetad_w. phinorm is the normalizer.
-    #             phinorm = n.dot(expElogthetad, expElogbetad) + 1e-100
-    #             # Iterate between gamma and phi until convergence
-    #             for it in range(0, 100):
-    #                 lastgamma = gammad
-    #                 # We represent phi implicitly to save memory and time.
-    #                 # Substituting the value of the optimal phi back into
-    #                 # the update for gamma gives this update. Cf. Lee&Seung 2001.
-    #                 gammad = self._alpha + expElogthetad * \
-    #                     n.dot(cts / phinorm, expElogbetad.T)
-    #                 Elogthetad = dirichlet_expectation(gammad)
-    #                 expElogthetad = n.exp(Elogthetad)
-    #                 phinorm = n.dot(expElogthetad, expElogbetad) + 1e-100
-    #                 # If gamma hasn't changed much, we're done.
-    #                 meanchange = n.mean(abs(gammad - lastgamma))
-    #                 if (meanchange < meanchangethresh):
-    #                     break
-    #             gamma[d, :] = gammad
-    #             # Contribution of document d to the expected sufficient
-    #             # statistics for the M step.
-    #             sstats[:, ids] += n.outer(expElogthetad.T, cts/phinorm)
-
-    #         # This step finishes computing the sufficient statistics for the
-    #         # M step, so that
-    #         # sstats[k, w] = \sum_d n_{dw} * phi_{dwk}
-    #         # = \sum_d n_{dw} * exp{Elogtheta_{dk} + Elogbeta_{kw}} / phinorm_{dw}.
-    #         sstats = sstats * self._expElogbeta
-
-    #         return((gamma, sstats))
 
     def update_lambda_docs(self, docs):
         """
@@ -366,11 +312,6 @@ class LDAVB:
                 tmax = max(temp)
                 phinorm[i] = n.log(sum(n.exp(temp - tmax))) + tmax
             score += n.sum(cts * phinorm)
-        # oldphinorm = phinorm
-        #             phinorm = n.dot(expElogtheta[d, :], self._expElogbeta[:, ids])
-        #             print oldphinorm
-        #             print n.log(phinorm)
-        #             score += n.sum(cts * n.log(phinorm))
 
         # E[log p(theta | alpha) - log q(theta | gamma)]
         score += n.sum((self._alpha - gamma) * Elogtheta)
@@ -424,11 +365,6 @@ class LDAVB:
                 tmax = max(temp)
                 phinorm[i] = n.log(sum(n.exp(temp - tmax))) + tmax
             score += n.sum(cts * phinorm)
-        # oldphinorm = phinorm
-        #             phinorm = n.dot(expElogtheta[d, :], self._expElogbeta[:, ids])
-        #             print oldphinorm
-        #             print n.log(phinorm)
-        #             score += n.sum(cts * n.log(phinorm))
 
         # E[log p(theta | alpha) - log q(theta | gamma)]
         score += n.sum((self._alpha - gamma) * Elogtheta)
