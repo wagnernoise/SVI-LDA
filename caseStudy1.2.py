@@ -4,10 +4,9 @@ from lda_vb import *
 import dataPreprocessing as dp
 from collections import defaultdict, Counter
 import os
-import itertools
 import myplots as mp
-
-
+import vocabulary as vc
+import random
 
 def main(response):
 
@@ -83,7 +82,7 @@ def main(response):
             if any(key.endswith(v[i][0]) for key in corpusDict):
                 lst.append(v[i])
         fac_dict[k] = lst
-        print('The key ' +  k + ' now has ' + str(len(fac_dict[k])) + ' list members - at end of iteration')
+        # print('The key ' +  k + ' now has ' + str(len(fac_dict[k])) + ' list members - at end of iteration')
 
     # print('There are ' + str(len(fac_dict)) + ' departments (including "UNK").')
     # for k, v in fac_dict.items():
@@ -100,15 +99,17 @@ def main(response):
                     department = dept
         corpusDict[k].append(department)
 
+
     # Uncomment the following code to get the structure of corpusDict == there are now 9 items in the values list.
-    for k, v in corpusDict.items():
-        print('key: ', k)
-        for i in range(len(v)):
-            print('index: ', i, ' type: ', type(v[i]), ' value: ', v[i])
-        break
+    # for k, v in corpusDict.items():
+    #     print('key: ', k)
+    #     for i in range(len(v)):
+    #         print('index: ', i, ' type: ', type(v[i]), ' value: ', v[i])
+    #     break
     #
-    mp.plotDepartments(corpusDict)
+    #mp.plotDepartments(corpusDict)
     #mp.plotAbstracts(corpusDict)
+    #mp.plotWordCountByDepartment(corpusDict)
     K = 5
     # alpha - parameter for per-document topic distribution
     alpha = 1./K
@@ -123,70 +124,51 @@ def main(response):
 
     # lst = [corpusDict[k][8] for k in corpusDict.keys()]
     # print(lst)
-    counter = Counter(list(itertools.chain.from_iterable([corpusDict[k][8] for k in corpusDict.keys()])))
+    # counter = Counter(list(itertools.chain.from_iterable([corpusDict[k][8] for k in corpusDict.keys()])))
+    # Take top N words from each department's articles, put them in a Counter dictionary
+    # and use those for the vocab parameter
+    N = 50
+    counter = vc.vocabulary(corpusDict, N)
+
     # Unique list of words from Titles
     vocab = [k for k in counter.keys()]
     #Initialize the algorithm with alpha=1/K, eta=1/K, tau_0=1024, kappa=0.7
-    D = countAbs
-# Initialize LDAVB Class onlineLDA
+    D = len(corpusDict)  # We want the total number of documents - not just the number for this iteration
+    # Initialize LDAVB Class onlineLDA
     lda = LDAVB(vocab, K, D, alpha, eta, tau, kappa)
     print('vocab: ', len(vocab), type(vocab), len(counter))
     print('lda._vocab: ', len(lda._vocab), type(lda._vocab))
     # How many documents to look at
+    randomList = list()
     docset = list()
-    if response == ('X'):
-        countIter = 1
-        total = 0
-        for i in range(1, 10):
-            docset = list()
-            ldaDict = defaultdict()
-            for k in corpusDict.keys():
-                if corpusDict[k][2][1] == i:
-                    ldaDict[k] = corpusDict[k]
-            # The above pulls out documents by group which is based on year:
-            #   1990-2009
-            #   2010
-            #   2011
-            #   ...
-            #   2017
-            D = len(corpusDict) # We want the total number of documents - not just the number for this iteration
-            print('Number of documents in group ', i,' is ', len(ldaDict))
-            total += len(ldaDict)
-            if i == 9:
-                print('Total sum of groups = ', total, ' which should = ', countAbs, ' (total number of abstracts)')
-            for k in ldaDict.keys():
-                docset.append(' '.join(ldaDict[k][6]))
-                #print(len(docset), docset)
-            # Initialize the algorithm with alpha=1/K, eta=1/K, tau_0=1024, kappa=0.7
-            documentsToAnalyze = int(len(ldaDict))
-            print('documentsToAnalyze:', documentsToAnalyze)
-            for j in range(1, documentsToAnalyze + 1):
-                countIter = j
-                # print('j', j)
-                # print('This is j:', j, ' and documents to analyze: ', documentsToAnalyze)
-                # print('And this is countIter: ', countIter)
-                gamma, bound = lda.update_lambda_docs(docset)
-                # Compute an estimate of held-out perplexity
-                wordids, wordcts = parse_doc_list(docset, lda._vocab)
-                perwordbound = bound * len(docset) / (D * sum(map(sum, wordcts)))
-                print ('Iteration {0}:  rho_t = {1},  held-out perplexity estimate = {2}'.format(countIter , lda._rhot, n.exp(-perwordbound)))
-                # Save lambda, the parameters to the variational distributions
-                # over topics, and gamma, the parameters to the variational
-                # distributions over topic weights for the articles analyzed in
-                # the last iteration.
-                if (countIter % 10 == 0):
-                    n.savetxt('./lambda/lambda1-{0}-{1}.dat'.format(countIter, i), lda._lambda)
-                    n.savetxt('./gamma/gamma1-{0}-{1}.dat'.format(countIter, i), gamma)
+    docKey = None
+    batchsize = D
 
+    documentsToAnalyze = batchsize
+    print('documentsToAnalyze:', documentsToAnalyze)
+    docsAnalyzed = 0
     if response == ('P'):
-        countIter = 1
-        total = 0
-        D = len(corpusDict)  # We want the total number of documents - not just the number for this iteration
-        for k in corpusDict.keys():
-            docset.append(' '.join(corpusDict[k][6]))
-        documentsToAnalyze = int(len(corpusDict) * 0.8)
-        print('documentsToAnalyze:', documentsToAnalyze)
-        for j in range(1, documentsToAnalyze + 1):
+        countTotal = 0
+        batch = 0
+        for k, v in corpusDict.items():
+            docset.append(' '.join(corpusDict[k][8]))  # Abstract plus title string
+        # while docsAnalyzed < documentsToAnalyze:
+        #     count = 0
+        #     while count < batchsize:
+        #         docKey = random.choice(list(corpusDict.keys()))
+        #         if docKey in randomList:
+        #             continue
+        #         else:
+        #             randomList.append(docKey)
+        #             docset.append(' '.join(corpusDict[docKey][8])) # Abstract plus title string
+        #         count += 1
+        #     print('Count: ', count)
+        print('docset: ', type(docset), len(docset))
+        batch += 1
+        countIter = 0
+        previous_lambda = round(0.0,4)
+        print('initialized previous_lambda = ' ,previous_lambda)
+        for j in range(1, batchsize + 1):
             countIter = j
             gamma, bound = lda.update_lambda_docs(docset)
             # Compute an estimate of held-out perplexity
@@ -197,16 +179,30 @@ def main(response):
                 # over topics, and gamma, the parameters to the variational
                 # distributions over topic weights for the articles analyzed in
                 # the last iteration.
+            current_lambda = round(float(n.exp(-perwordbound)),4)
+            print('Previous lambda: ', previous_lambda,  ' Current lambda = ', current_lambda)
+
+            delta = previous_lambda - current_lambda
+
+            if j == 1:
+                previous_lambda = current_lambda
+            elif delta < 0.001:
+                print('The model converged after: ', j, ' iterations with a perplexity level of: ', current_lambda)
+                break
+            else:
+                print('Delta between Perplexity levels is: ', round(delta,4))
+                previous_lambda = current_lambda
+
             if (countIter % 10 == 0):
-                n.savetxt('./lambda/lambda1-{0}.dat'.format(countIter), lda._lambda)
-                n.savetxt('./gamma/gamma1-{0}.dat'.format(countIter), gamma)
+                n.savetxt('./lambda/lambda-{0}.dat'.format(countIter), lda._lambda)
+                n.savetxt('./gamma/gamma-{0}.dat'.format(countIter), gamma)
+        # docsAnalyzed += batchsize
 
-
-                                    # if response == 'R':
-    #     ldaDict = corpusDict.copy()
-    #     index = 0
-    #     lst = lda._vocab
-    #     mp.lambdaAnalysis(ldaDict, fac_dict, lst)
+    if response == 'R':
+        ldaDict = corpusDict.copy()
+        index = 0
+        lst = lda._vocab
+        mp.lambdaAnalysis(ldaDict, fac_dict, lst)
 
 
 if __name__ == '__main__':

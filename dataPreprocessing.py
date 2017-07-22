@@ -149,7 +149,7 @@ def preProcess(dataDict):
     temp = list()
     for k in dataDict.keys():
         stopset = set(nltk.corpus.stopwords.words('english'))
-        stopset.update(('end', 'and', 'of', 'to', ':', '', ))
+        stopset.update(('end', 'and', 'of', 'to', ':', '', 'use', 'show', 'uses', 'also', 'new', 'using', 'give', 'given', 'based' , 'used', 'one', 'two', 'three'))
         words = word_tokenize(dataDict[k][5].strip().lower()) # Abstracts
         words2 = word_tokenize(dataDict[k][4].strip().lower()) # Titles
         stopped_tokens = [i for i in words if not i in stopset and len(i) > 2] # Abstracts
@@ -164,10 +164,6 @@ def preProcess(dataDict):
         stemmedWords2 = [porter.stem(t) for t in stopped_tokens2]
         stemmedWords3 = [porter.stem(t) for t in stopped_combined]
 
-        # st = RegexpStemmer('ing$|s$', min=2)
-        # stemmedWords = [st.stem(t) for t in stopped_tokens]
-        # stemmedWords2 = [st.stem(t) for t in stopped_tokens2]
-
         #print(stemmedWords)
         #dataDict[k].append(Counter(stemmedWords))
         #dataDict[k].append(stopped_tokens) # preProcessed Abstracts
@@ -176,7 +172,7 @@ def preProcess(dataDict):
         # print('stemmedWords2', stemmedWords2)
         dataDict[k].append(stemmedWords)  # preProcessed Abstracts
         dataDict[k].append(stemmedWords2)  # preProcessed Titles
-        dataDict[k].append(Counter(stemmedWords3))  # preProcessed Titles
+        dataDict[k].append(stemmedWords3)  # preProcessed Titles
 
         #dataDict[k].append(Counter(stopped_tokens2)) # Unique list of Title Words
 
