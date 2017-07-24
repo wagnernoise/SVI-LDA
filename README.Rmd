@@ -19,7 +19,7 @@ This code is presented as is. You will be able to see that it was a work in prog
 
 Hope it is of some value.
 Thanks!
-```{r}
+```{r, echo=FALSE}
 ### reference site
 #http://cpsievert.github.io/LDAvis/reviews/reviews.html
 
