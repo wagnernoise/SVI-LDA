@@ -6,7 +6,6 @@ from collections import defaultdict, Counter
 import os
 import myplots as mp
 import vocabulary as vc
-import random
 
 def main(response):
 
