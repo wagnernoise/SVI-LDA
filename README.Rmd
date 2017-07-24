@@ -5,10 +5,116 @@ date: "7/15/2017"
 output: html_document
 ---
 
-Latent Dirichlet allocation (LDA) is an unsupervised learning topic model, similar to k-means clustering, and one of its applications is to discover common themes, or topics, that might occur across a collection of documents. The process followed here is based off a case study provided by MIT Professional Education Digital Programs, Data Science: Data to Insights, "Finding Themes In Project Descriptions." The study is presented by Professor Tamara Broderick. In this course, MIT provided numerous Case Studies, and this is one of the case studies I decided to implement since it is pertinent to my current discussions on automated integration.
+Latent Dirichlet allocation (LDA) is an unsupervised learning topic model and one of its applications is to discover common themes, or topics that might occur across a collection of documents. The process followed here is based off a case study provided by MIT Professional Education Digital Programs, Data Science: Data to Insights, "Finding Themes In Project Descriptions." The study is presented by Professor Tamara Broderick. 
 
-## Topic Models:
+## The Code:
 
-Many text-mining algorithms are based on occurrence of words by frequency, and are associated with one and only one cluster. This can be misleading when a single word can occur multiple times in several articles, and each article can have one or multiple topics. So, unlike k-means clustering, it makes sense to allow each article (and word), to be associated with multiple topics. This is referred to as a mixed memberships model, and LDA is one of these models. By definition, feature allocation, mixed membership, and admixture are all terms that define the idea that data points can belong to multiple groups simultaneously.
+As the code is currently configured, if you download or clone this project, and run caseStudy1.2.py it will process the abstracts that I scraped from arXiv.org. The max value is set at 0.001 so the model will probably converge at approximately 270 iterations.
 
-This algorithm has many scientific applications, but can be used as well in business and content management systems to capture concepts and topics that cross multiple lines of business. An algorithm such as LDA would be beneficial in marketing research, looking at multiple news articles from various news sources to see what topics pop up in the same articles or group of articles. New associations can be discovered that spark ideas for target markets, or product ideas.
+There are several text files that include the faculty data, the abstract documents (./Abrstracts), and the output from my analysis (./gamma, /.lambda). You can use this data, or download the data yourself. You will need to uncomment sections of the caseStudy1.2.py file. 
+
+The dataPreprocessing.py file does all of the scraping, and preprocessing (prepaing the text - word stemming, etc.). The vocalbulary.py processes the data to create a vocabulary for the analysis, and the myPlots.py has several functions for building the figures in the analysis presented at [http://www.rshane.com](https://www.rshane.com/2017/07/22/latent-dirichlet-allocation-lda-mit-case-study/). Any feedback, and/or questions is appreciated.
+
+This code is presented as is. You will be able to see that it was a work in progress with many alterations as the analysis progressed. I left blocks of code in there just in case I decided to go back and pursue that line of thinking. For example, selecting the abstracts randomly. 
+
+Hope it is of some value.
+Thanks!
+```{r}
+### reference site
+#http://cpsievert.github.io/LDAvis/reviews/reviews.html
+
+library(readr)
+library(tm)
+library(SnowballC)
+library(Matrix)
+library(lda)
+library(LDAvis)
+library(servr)
+
+# read data
+train = read_csv("../input/train.csv");
+test = read_csv("../input/test.csv");
+
+txt = paste(train$query,train$product_title);
+txt = c(txt,paste(test$query,test$product_title));
+
+
+# pre-processing
+txt <- gsub("'", "", txt)  # remove apostrophes
+txt <- gsub("[[:punct:]]", " ", txt)  # replace punctuation with space
+txt <- gsub("[[:cntrl:]]", " ", txt)  # replace control characters with space
+txt <- gsub("^[[:space:]]+", "", txt) # remove whitespace at beginning of documents
+txt <- gsub("[[:space:]]+$", "", txt) # remove whitespace at end of documents
+txt <- tolower(txt)  # force to lowercase
+
+# tokenize on space and output as a list:
+doc.list <- strsplit(txt, "[[:space:]]+")
+
+# compute the table of terms:
+term.table <- table(unlist(doc.list))
+term.table <- sort(term.table, decreasing = TRUE)
+
+# stop words
+stop_words = c('http','www','img','border','color','style','padding','table','font','thi','inch','ha','width','height')
+
+# remove terms that are stop words or occur fewer than 5 times:
+del <- names(term.table) %in% stop_words | term.table < 5
+term.table <- term.table[!del]
+vocab <- names(term.table)
+
+# now put the documents into the format required by the lda package:
+get.terms <- function(x) {
+    index <- match(x, vocab)
+    index <- index[!is.na(index)]
+    rbind(as.integer(index - 1), as.integer(rep(1, length(index))))
+}
+documents <- lapply(doc.list, get.terms)
+
+
+
+# Compute some statistics related to the data set:
+D <- length(documents)
+W <- length(vocab)  
+doc.length <- sapply(documents, function(x) sum(x[2, ])) 
+N <- sum(doc.length)  
+term.frequency <- as.integer(term.table)
+
+# MCMC and model tuning parameters:
+K <- 20
+G <- 1000
+alpha <- 0.02
+eta <- 0.02
+
+# Fit the model:
+set.seed(357)
+t1 <- Sys.time()
+fit <- lda.collapsed.gibbs.sampler(documents = documents, K = K, vocab = vocab, 
+                                   num.iterations = G, alpha = alpha, 
+                                   eta = eta, initial = NULL, burnin = 0,
+                                   compute.log.likelihood = TRUE)
+t2 <- Sys.time()
+t2 - t1  
+
+
+### Visualizing the fitted model with LDAvis
+theta <- t(apply(fit$document_sums + alpha, 2, function(x) x/sum(x)))
+phi <- t(apply(t(fit$topics) + eta, 2, function(x) x/sum(x)))
+
+results <- list(phi = phi,
+                theta = theta,
+                doc.length = doc.length,
+                vocab = vocab,
+                term.frequency = term.frequency)
+
+
+# create the JSON object to feed the visualization:
+json <- createJSON(phi = results$phi, 
+                   theta = results$theta, 
+                   doc.length = results$doc.length, 
+                   vocab = results$vocab, 
+                   term.frequency = results$term.frequency)
+
+serVis(json, out.dir = './', open.browser = FALSE)
+system("mv index.html results.html")
+```
+
